@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro para Admissão</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+  <div class="brand">
+    <img src="logo.png" alt="SEMEP" class="logo" />
+    <div>
+      <h1>SEMEP</h1>
+      <p>Formulário de Admissão de Colaborador</p>
+      <p class="intro-text">Preencha os dados abaixo com atenção. As informações serão utilizadas pelo setor de Recursos Humanos para fins de cadastro e admissão.</p>
+    </div>
+  </div>
+  <div class="status-card">
+    <strong>Ambiente de teste</strong>
+    <span id="templateStatus">Verificando...</span>
+  </div>
+</header>
+
+    <form id="admissionForm">
+      <section class="card">
+        <h2>Dados cadastrais</h2>
+        <div class="grid cols-3">
+          <label>Nome completo
+            <input type="text" name="nome" required />
+          </label>
+          <label>Sexo
+            <select name="sexo_funcionario" required>
+              <option value="">Selecione</option>
+              <option>MASCULINO</option>
+              <option>FEMININO</option>
+            </select>
+          </label>
+          <label>Estado civil
+            <select name="estado_civil" required>
+              <option value="">Selecione</option>
+              <option>SOLTEIRO(A)</option>
+              <option>CASADO(A)</option>
+              <option>DIVORCIADO(A)</option>
+              <option>SEPARADO(A)</option>
+              <option>VIÚVO(A)</option>
+              <option>UNIÃO ESTÁVEL</option>
+            </select>
+          </label>
+          <label>Naturalidade
+            <input type="text" name="naturalidade" />
+          </label>
+          <label>UF da naturalidade
+            <input type="text" name="uf_naturalidade" maxlength="2" />
+          </label>
+          <label>Data de nascimento
+            <input type="text" name="data_nascimento" placeholder="dd/mm/aaaa" required data-mask="date" />
+          </label>
+          <label>Nome da mãe
+            <input type="text" name="nome_mae" />
+          </label>
+          <label>Nome do pai
+            <input type="text" name="nome_pai" />
+          </label>
+          <label>Grau de instrução
+            <input type="text" name="grau_instrucao" />
+          </label>
+          <label>E-mail
+            <input type="email" name="email" required />
+          </label>
+          <label class="span-2">Contato de emergência (nome e telefone)
+            <input type="text" name="contato_emergencia" />
+          </label>
+          <label>Raça
+            <input type="text" name="raca" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Dados bancários</h2>
+        <div class="grid cols-3">
+          <label>Banco
+            <input type="text" name="banco" />
+          </label>
+          <label>Agência
+            <input type="text" name="agencia" />
+          </label>
+          <label>Conta para pagamento
+            <input type="text" name="conta_pagto" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Documentos</h2>
+        <div class="grid cols-4">
+          <label>CPF
+            <input type="text" name="cpf" required data-mask="cpf" />
+          </label>
+          <label>PIS/PASEP
+            <input type="text" name="pis_pasep" />
+          </label>
+          <label>RG
+            <input type="text" name="rg_numero" />
+          </label>
+          <label>Data de emissão do RG
+            <input type="text" name="rg_data_emissao" placeholder="dd/mm/aaaa" data-mask="date" />
+          </label>
+          <label>Órgão emissor do RG
+            <input type="text" name="orgao_emissor_rg" />
+          </label>
+          <label>CTPS
+            <input type="text" name="ctps_numero" />
+          </label>
+          <label>Série CTPS
+            <input type="text" name="ctps_serie" />
+          </label>
+          <label>UF CTPS
+            <input type="text" name="ctps_uf" maxlength="2" />
+          </label>
+          <label>Data emissão CTPS
+            <input type="text" name="ctps_data_emissao" placeholder="dd/mm/aaaa" data-mask="date" />
+          </label>
+          <label>Número da CNH
+            <input type="text" name="cnh_numero" />
+          </label>
+          <label>Categoria CNH
+            <input type="text" name="cnh_categoria" />
+          </label>
+          <label>Categoria CNH (outros dados)
+            <input type="text" name="cnh_categoria_outros" />
+          </label>
+          <label>Órgão emissor CNH
+            <input type="text" name="orgao_emissor_cnh" />
+          </label>
+          <label>Data emissão CNH
+            <input type="text" name="cnh_data_emissao" placeholder="dd/mm/aaaa" data-mask="date" />
+          </label>
+          <label>Data vencimento CNH
+            <input type="text" name="cnh_data_vencimento" placeholder="dd/mm/aaaa" data-mask="date" />
+          </label>
+          <label>UF CNH
+            <input type="text" name="cnh_uf" maxlength="2" />
+          </label>
+          <label>Certificado reservista
+            <input type="text" name="reservista" />
+          </label>
+          <label>Título de eleitor
+            <input type="text" name="titulo_eleitor" />
+          </label>
+          <label>Zona
+            <input type="text" name="titulo_zona" />
+          </label>
+          <label>Seção
+            <input type="text" name="titulo_secao" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Endereço e contato</h2>
+        <div class="grid cols-4">
+          <label class="span-2">Endereço
+            <input type="text" name="endereco" />
+          </label>
+          <label>Número
+            <input type="text" name="numero" />
+          </label>
+          <label>Complemento
+            <input type="text" name="complemento" />
+          </label>
+          <label>Bairro
+            <input type="text" name="bairro" />
+          </label>
+          <label>UF
+            <input type="text" name="uf_endereco" maxlength="2" />
+          </label>
+          <label>Cidade
+            <input type="text" name="cidade" />
+          </label>
+          <label>CEP
+            <input type="text" name="cep" data-mask="cep" />
+          </label>
+          <label>DDD celular
+            <input type="text" name="ddd_celular" data-mask="ddd" />
+          </label>
+          <label>Celular
+            <input type="text" name="celular" required data-mask="phone" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Cônjuge / companheiro(a)</h2>
+        <div class="grid cols-4">
+          <label class="span-2">Nome
+            <input type="text" name="conjuge_nome" />
+          </label>
+          <label>Data de nascimento
+            <input type="text" name="conjuge_data_nascimento" placeholder="dd/mm/aaaa" data-mask="date" />
+          </label>
+          <label>Sexo
+            <select name="conjuge_sexo">
+              <option value=""></option>
+              <option>MASCULINO</option>
+              <option>FEMININO</option>
+            </select>
+          </label>
+          <label>Grau de parentesco
+            <input type="text" name="conjuge_grau_parentesco" value="CÔNJUGE" />
+          </label>
+          <label>Dependente para IR
+            <select name="conjuge_ir">
+              <option value=""></option>
+              <option>SIM</option>
+              <option>NÃO</option>
+            </select>
+          </label>
+          <label class="span-2">Local de nascimento
+            <input type="text" name="conjuge_local_nascimento" />
+          </label>
+          <label>CPF
+            <input type="text" name="conjuge_cpf" data-mask="cpf" />
+          </label>
+          <label>Data de casamento
+            <input type="text" name="conjuge_data_casamento" placeholder="dd/mm/aaaa" data-mask="date" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <div>
+            <h2>Dependentes filhos(as) / enteados(as)</h2>
+            <p>Adicione até 5 dependentes, conforme a capacidade da planilha-base.</p>
+          </div>
+          <button type="button" id="addDependentBtn" class="secondary-button">Adicionar dependente</button>
+        </div>
+        <div id="dependentsContainer" class="stack"></div>
+      </section>
+
+
+      <section class="card">
+        <h2>Declaração</h2>
+        <div class="grid">
+          <label class="checkbox-inline">
+            <input type="checkbox" name="declaracao_veracidade" required />
+            Declaro que as informações prestadas são verdadeiras e autorizo seu uso para fins de cadastro e admissão.
+          </label>
+        </div>
+      </section>
+
+      <section class="actions card">
+        <div>
+          <h2>Finalizar envio</h2>
+          <p>Ao clicar em enviar, seus dados serão convertidos para a planilha oficial e encaminhados por e-mail para o endereço de teste configurado.</p>
+        </div>
+        <div class="actions-row">
+          <div class="email-destination">Destino do teste: <strong id="emailTarget">Carregando...</strong></div>
+          <button type="submit" id="submitBtn">Enviar formulário</button>
+          <button type="button" id="clearBtn" class="secondary-button">Limpar formulário</button>
+        </div>
+        <p id="feedback" class="feedback"></p>
+      </section>
+    </form>
+  </main>
+
+  <footer class="page-footer">
+    <small>SEMEP • Sistema de Cadastro e Admissão • Ambiente de Teste</small>
+  </footer>
+
+  <template id="dependentTemplate">
+    <article class="dependent-card">
+      <div class="dependent-topbar">
+        <h3>Dependente <span class="dependent-index"></span></h3>
+        <button type="button" class="link-button remove-dependent">Remover</button>
+      </div>
+      <div class="grid cols-4">
+        <label class="span-2">Nome
+          <input type="text" data-field="nome" />
+        </label>
+        <label>Data de nascimento
+          <input type="text" data-field="data_nascimento" placeholder="dd/mm/aaaa" data-mask="date" />
+        </label>
+        <label>Sexo
+          <select data-field="sexo">
+            <option value=""></option>
+            <option>MASCULINO</option>
+            <option>FEMININO</option>
+          </select>
+        </label>
+        <label>Grau de parentesco
+          <input type="text" data-field="grau_parentesco" value="FILHO(A)" />
+        </label>
+        <label>Dependente para IR
+          <select data-field="ir">
+            <option value=""></option>
+            <option>SIM</option>
+            <option>NÃO</option>
+          </select>
+        </label>
+        <label class="span-2">Local de nascimento
+          <input type="text" data-field="local_nascimento" />
+        </label>
+        <label>CPF do dependente
+          <input type="text" data-field="cpf" data-mask="cpf" />
+        </label>
+        <label>Nº nascido vivo (DNV)
+          <input type="text" data-field="dnv" />
+        </label>
+      </div>
+      <div class="checkbox-row">
+        <label><input type="checkbox" data-field="plano_saude" /> Incluir no plano de saúde</label>
+        <label><input type="checkbox" data-field="plano_odonto" /> Incluir no plano odonto</label>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
